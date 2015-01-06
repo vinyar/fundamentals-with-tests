@@ -1,0 +1,36 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-6.5
+    driver:
+      box: chef/centos-6.5
+
+suites:
+  - name: default
+    run_list:
+      - recipe[motd::default]
+    attributes:
+
+  # - name: pci_true
+  #   run_list:
+  #     - recipe[motd::default]
+  #   attributes:
+  #     motd:
+  #       company: "Chef"
+  #     pci:
+  #       in_scope: true
+
+  # - name: pci_false
+  #   run_list:
+  #     - recipe[motd::default]
+  #   attributes:
+  #     motd:
+  #       company: "Chef"
+  #     pci:
+  #       in_scope: false

@@ -1,0 +1,19 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-6.5
+    driver:
+      box: chef/centos-6.5
+
+suites:
+  - name: default
+    data_bags_path: 'test/fixtures/data_bags'
+    run_list:
+      - recipe[apache::default]
+    attributes:

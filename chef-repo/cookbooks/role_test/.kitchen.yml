@@ -1,0 +1,16 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-6.5
+
+suites:
+  - name: base
+    roles_path: '../../roles'
+    run_list:
+      - role[base]
+    attributes:

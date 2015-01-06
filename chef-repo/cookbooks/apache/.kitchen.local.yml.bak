@@ -1,0 +1,6 @@
+---
+driver_plugin: docker
+driver_config:
+  socket: <%= ENV.fetch('DOCKER_HOST', 'unix:///var/run/docker.sock') %>
+  provision_command: curl -L https://www.opscode.com/chef/install.sh | bash
+  require_chef_omnibus: false

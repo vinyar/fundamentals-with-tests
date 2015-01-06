@@ -1,0 +1,6 @@
+source "https://supermarket.getchef.com"
+
+cookbook 'motd', path: '../motd'
+cookbook 'pci', path: '../pci'
+
+metadata
